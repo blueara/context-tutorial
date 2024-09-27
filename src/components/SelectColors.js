@@ -1,21 +1,21 @@
-import { ColorConsumer } from "../contexts/color";
-ColorContext;
+import { Component } from "react";
+import ColorContext from "../contexts/color";
+
 const colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
 
 class SelectColors extends Component {
-  static contextTypes = ColorContext;
+  static contextType = ColorContext;
 
   handleSetColor = (color) => {
     this.context.actions.setColor(color);
   };
-  handleSetsubcolor = (subcolor) => {
+  handleSetSubcolor = (subcolor) => {
     this.context.actions.setSubcolor(subcolor);
   };
   render() {
     return (
       <div>
         <h2>색상을 선택하세요.</h2>
-
         <div style={{ display: "flex" }}>
           {colors.map((color) => (
             <div
@@ -29,12 +29,11 @@ class SelectColors extends Component {
               onClick={() => this.handleSetColor(color)}
               onContextMenu={(e) => {
                 e.preventDefault();
-                this.handleSetsubcolor(color);
+                this.handleSetSubcolor(color);
               }}
             />
           ))}
         </div>
-
         <hr />
       </div>
     );

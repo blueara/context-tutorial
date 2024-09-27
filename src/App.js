@@ -1,6 +1,6 @@
-import ColorBox from "./contexts/ColorBox";
+import ColorBox from "./components/ColorBox";
 import { ColorProvider } from "./contexts/color";
-import SelectColors from "./components/SelectColor";
+import SelectColors from "./components/SelectColors";
 const App = () => {
   return (
     <ColorProvider>
